@@ -1,0 +1,16 @@
+#box {
+    height: 50px;
+    width: 50px;
+    background-color: red
+   }
+   
+   #seconddiv.coolclass{
+    height:300px;
+    background: purple;
+   }
+   
+   #seconddiv {
+    height: 0px;
+    transition: 0.5s;
+    overflow: hidden;
+   }

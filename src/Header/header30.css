@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+
+.header-3 {
+    display: flex;
+    /* border:1px solid gray; */
+    border-radius: 30px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .35);
+}
+
+header .icons {
+    color: grey;
+    font-size: 2.2rem;
+    display: flex;
+    margin-right: 10px;
+    margin-top: 18px;
+
+    position: absolute;
+    right: 2rem;
+    gap: 30px;
+}
+
+
+
+
+nav a {
+
+    margin: 1.5rem 2rem;
+    color: grey;
+    font-size: 2.2rem;
+    font-weight: 500;
+
+    /* text-decoration: none; */
+}
+
+.nav {
+
+    display: flex;
+
+}
+
+
+nav a:hover {
+    color: green;
+    transition: 0.01s ease-in-out;
+}
+
+header .nav-btn {
+    display: flex;
+    margin-left: 25px;
+    padding: 15px;
+
+    cursor: pointer;
+    background: transparent;
+    /* border: 2px solid grey; */
+    outline: none;
+    color: grey;
+    font-size: 3rem;
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+header .nav-btn:hover {
+    color: green;
+}
+
+header .nav-close-btn {
+    transition: .001s;
+}
+
+header .nav-close-btn:hover {
+    color: red;
+}
+
+header .nav-btn:active {
+    transform: translateY(5px);
+
+}
+
+header .nav-close-btn:active {
+    transform: translateY(5px);
+
+}
+
+.icons a {
+    color: green;
+    cursor: pointer;
+
+}
+
+.icons li {
+    list-style-type: none;
+
+}
+
+.icons .login-btn {
+    display: flex;
+    background: #fff;
+    text-decoration: none;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    color:green;
+    font-size: 22px;
+    margin: auto;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.icons .logout-btn {
+    display: flex;
+    background: var(--green);
+    text-decoration: none;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+.icons .dropdown{
+    position: relative;
+    display: inline-block;
+
+}
+.dropdown-content p:hover{
+    color: green;
+    cursor: pointer;
+}
+.dropdown-content p{
+    color: grey;
+    margin: 1.5rem;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    right: 0.2rem;
+    top: 5.5rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-width: 160px;
+   align-items: center;
+   border: 1px solid grey;
+   border-radius: 2rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.dropdown:hover .dropdown-content{
+
+    display: block;
+}
+
+.log-btn{
+  width: 80px;
+  height: 20px;
+  background:green;
+  color: #FF0;
+font-size: 15px;
+border-radius: 5px;
+height: 30px;
+}
+
+
+
+
+
+
+@media only screen and (max-width:760px) {
+
+    header .nav-btn {
+
+        visibility: visible;
+        opacity: 1;
+        /* margin-left: 25px; */
+    }
+
+
+
+
+
+    header nav {
+        position: fixed;
+        top: 20px;
+        background-color: #fff;
+        margin-left: 10px;
+        width: 250px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+        transition: 0.003s;
+        transform: translateY(-100vh);
+        z-index: 1001;
+        border: 2px solid green;
+        border-radius: 15px;
+
+
+        /* border-top-left-radius: 90px; */
+        /* border-bottom-right-radius: 90px; */
+    }
+
+    header .responsive_nav {
+        transform: none;
+    }
+
+    nav .nav-close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    nav a {
+        font-size: 2.5rem;
+        font-weight: 600;
+        /* border-bottom: 3px solid green;  */
+        border-radius: 20%;
+
+    }
+
+    nav a:hover {
+        /* border-top: 3px solid green; */
+        border-bottom: 3px solid green;
+        border-radius: 10%;
+        padding: 5px;
+    }
+
+
+}

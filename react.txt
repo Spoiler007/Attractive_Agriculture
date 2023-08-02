@@ -1,0 +1,105 @@
+import React, { useState, useEffect } from 'react';
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+function App() {
+  const [menuClass, setMenuClass] = useState('');
+  const [navbarClass, setNavbarClass] = useState('');
+  const [headerClass, setHeaderClass] = useState('');
+  const [scrollTopClass, setScrollTopClass] = useState('');
+  const [countdown, setCountdown] = useState({
+    days: '',
+    hours: '',
+    minutes: '',
+    seconds: '',
+  });
+
+  useEffect(() => {
+    const menu = document.querySelector('#menu-bar');
+    const navbar = document.querySelector('.navbar');
+    const header = document.querySelector('.header-3');
+    const scrollTop = document.querySelector('.scroll-top');
+
+    menu.addEventListener('click', () => {
+      setMenuClass((prevClass) =>
+        prevClass === 'fa-times' ? '' : 'fa-times'
+      );
+      setNavbarClass((prevClass) =>
+        prevClass === 'active' ? '' : 'active'
+      );
+    });
+
+    window.onscroll = () => {
+      setMenuClass('');
+      setNavbarClass('');
+      if (window.scrollY > 250) {
+        setHeaderClass('active');
+        setScrollTopClass('initial');
+      } else {
+        setHeaderClass('');
+        setScrollTopClass('none');
+      }
+    };
+
+    const swiper = new Swiper('.home-slider', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    });
+
+    const countDate = new Date('june 1, 2021 00:00:00').getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const gap = countDate - now;
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      setCountdown({
+        days: d,
+        hours: h,
+        minutes: m,
+        seconds: s,
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div>
+      <header className={`header-3 ${headerClass}`}>
+        <nav className="navbar">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Pricing</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+          <div className="menu-bar" id="menu-bar">
+            <i className={`fa fa-bars ${menuClass}`
