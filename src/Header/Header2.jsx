@@ -8,7 +8,7 @@ function Header2() {
       <div className="header-2">
 
         <a href="#" className="logo">
-        <img src={logo}></img>
+        <img src={logo}/>
         
          <h4>Attractive Agriculture </h4>
          

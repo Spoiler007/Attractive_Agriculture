@@ -33,3 +33,16 @@ html{
 section{
   padding:1.5rem 9%;
 }
+
+::-webkit-scrollbar{
+  width: 10px;
+
+}
+::-webkit-scrollbar-track {
+  background:white; 
+}
+::-webkit-scrollbar-thumb {
+  background: green; 
+  border-radius: 12px;
+  
+}

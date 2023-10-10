@@ -1,14 +1,12 @@
 import React from 'react'
-import { Link, Router } from 'react-router-dom'
+import {Link}  from 'react-router-dom';
 import { useRef } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes ,FaShoppingCart,FaStoreAlt} from 'react-icons/fa'
 import './header30.css'
 import Login from '../Form/Login';
-import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from "@auth0/auth0-react";
-
-
-
+import Addtocart from '../Cart/Store'
+import { Routes,Route } from 'react-router-dom';
 const Header30 = () => {
 
     const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
@@ -19,6 +17,7 @@ const Header30 = () => {
     }
     return (
         <>
+       
 
             <header className='header-3'>
                 <nav className='nav' ref={navRef}>
@@ -34,38 +33,37 @@ const Header30 = () => {
 
                 </nav>
                 <div className="icons">
-                    <a href="#" className="fas fa-shopping-cart"></a>
-                    <a href="#" className="fas fa-heart"></a>
 
-                    {/* <a 
-                    href={<Login/>} className="fas fa-user-circle"></a> */}
-                  
-                  <div className='dropdown'>
-                  <a className="fas fa-user-circle"></a>
-                  <div className='dropdown-content'>
-                  <p>Profile</p>
-                  <p>WishList</p>
-                  <p>cart</p>
-                  {/* <p> Log In</p>
-                  <p>Log Out</p> */}
+                    <FaShoppingCart className='cart'  />
 
-                    {isAuthenticated ? (
-                        <li >
-                            <button className='log-btn' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-                                Log Out
-                            </button>
-                        </li>
+                    <Link to={"/cart"}>
+                    <FaStoreAlt className='store'/>
+                    </Link>
 
-                    ) : (
+                    <div className='dropdown'>
+                        <a className="fas fa-user-circle"></a>
+                        <div className='dropdown-content'>
+                            <p>Profile</p>
+                            <p>WishList</p>
+                            <p>cart</p>
+
+                            {isAuthenticated ? (
+                                <li >
+                                    <button className='log-btn' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                                        Log Out
+                                    </button>
+                                </li>
+
+                            ) : (
 
 
-                        <li>
-                            <button className='log-btn' onClick={() => loginWithRedirect()}>Log In</button>
-                        </li>
-                    )}
-                  </div>
+                                <li>
+                                    <button className='log-btn' onClick={() => loginWithRedirect()}>Log In</button>
+                                </li>
+                            )}
+                        </div>
 
-                  </div>
+                    </div>
 
 
                 </div>

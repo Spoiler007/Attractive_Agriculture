@@ -12,9 +12,9 @@ function Deal() {
 
     <div class="content">
         <h3 class="title">don't miss the deal</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae rem eligendi repudiandae
-            pariatur. Aut, esse molestias laborum sunt reprehenderit repellat officiis aspernatur consequatur
-            nemo! Veritatis, ex architecto! Eligendi, iste nulla.</p>
+        <p>Plant Paradise Deals Await!
+
+Explore exclusive offers on hand-picked plants. Limited-time specials, bundled delights, surprise flash sales, seasonal gems, and clearance treasures await. Join our Green Rewards Program for even more savings. Elevate your space with nature's finest. Act fast, quantities are limited. Happy gardening!</p>
         <div class="count-down">
             <div class="box">
                 <h3 id="day">00</h3>

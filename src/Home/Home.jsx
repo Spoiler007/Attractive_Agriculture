@@ -1,27 +1,34 @@
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {  Navigation,Pagination,Autoplay, A11y } from 'swiper';
+import { Navigation, Pagination, Autoplay, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
-
 import { useEffect, useRef } from 'react';
 import img1 from "../images/slider1.jpg"
 import img2 from "../images/slider2.jpg"
 import img3 from "../images/slider3.jpg"
 import './home.css'
+import Category from '../Category/Category';
+import Product from '../Product/Product';
+import Icon from '../Icon/Icon';
+import Deal from '../Deal/Deal';
+import Contact from '../Contact/Contact';
+import Banner from '../Banner/Banner';
+import Header30 from '../Header/Header30';
 
 function Home() {
     return (
         <>
+           <Header30 />
+
             <section className="home" id="home">
                 <div className="swiper-container">
                     <Swiper
-         
 
-                        modules={[Navigation, Pagination, Autoplay,A11y ]}
+
+                        modules={[Navigation, Pagination, Autoplay, A11y]}
                         spaceBetween={50}
                         slidesPerView={1}
                         loop={true}
@@ -67,6 +74,13 @@ function Home() {
                     </Swiper>
                 </div>
             </section>
+         
+            <Banner />
+            <Category />
+            <Product />
+            <Icon />
+            <Deal />
+            <Contact />
         </>
     )
 }

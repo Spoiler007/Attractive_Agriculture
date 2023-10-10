@@ -91,7 +91,12 @@ header .nav-close-btn:active {
 
 }
 
-.icons a {
+.icons{
+    display:inline;
+    vertical-align:middle;
+}
+
+.icons a, .cart,.store {
     color: green;
     cursor: pointer;
 
@@ -238,3 +243,5 @@ height: 30px;
 
 
 }
+
+

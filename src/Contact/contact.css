@@ -1,7 +1,10 @@
+
+
 .contact .row{
     display: flex;
     flex-wrap: wrap;
     border:.1rem solid rgba(0,0,0,.3);
+    
   }
   
   .contact .row .map{
